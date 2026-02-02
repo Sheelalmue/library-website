@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Seekers Library</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+}
+
+header {
+  background: #1e3a8a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.search-box {
+  margin-top: 15px;
+}
+
+.search-box input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.book {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.book img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  background: #f1f1f1;
+  padding: 5px;
+}
+
+.book-content {
+  padding: 15px;
+}
+
+.book h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.book p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.book a {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  padding: 8px;
+  background: #1e3a8a;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.book a.youtube {
+  background: #cc0000;
+}
+
+footer {
+  background: #1e3a8a;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Dream Seekers Library</h1>
+  <p>Read • Learn • Grow</p>
+  <div class="search-box">
+    <input type="text" placeholder="Search books..." onkeyup="searchBooks(this.value)">
+  </div>
+</header>
+
+<div class="container">
+<div class="books" id="books">
+
+<!-- ===== BOOK 1 ===== -->
+<div class="book">
+  <img src="image1.jpg">
+  <div class="book-content">
+    <h3>ကျွန်တော်သူငယ်ချင်း ဝေလငါး</h3>
+    <p>Short description about this book. You can write anything here.</p>
+    <a href="https://drive.google.com/file/d/1zo0W7-H6p5W3xGQXtxDwFVCnshacb_E0/view?usp=drive_link" target="_blank">Read PDF</a>
+    <a href="https://youtu.be/B039P64TuWM" target="_blank" class="youtube">Watch Video</a>
+  </div>
+</div>
+
+<!-- ===== BOOK 2 ===== -->
+<div class="book">
+  <img src="image2.jpg">
+  <div class="book-content">
+    <h3>စွန့်စွန့်စားစား မိုင်လို</h3>
+    <p>This is a short summary of the book content.</p>
+    <a href="စွန့်စွန့်စားစား မိုင်လို.pdf" target="_blank">Read PDF</a>
+    <a href="https://youtube.com" target="_blank" class="youtube">Watch Video</a>
+  </div>
+</div>
+
+<!-- ===== COPY FROM HERE ===== -->
+<!-- Duplicate this block until BOOK 100 -->
+
+<div class="book">
+  <img src="images/book3.jpg">
+  <div class="book-content">
+    <h3>ပျံပျံ ဖိုးဖြူပျံ</h3>
+    <p>Book description goes here.</p>
+    <a href="pdfs/book3.pdf" target="_blank">Read PDF</a>
+    <a href="https://youtube.com" target="_blank" class="youtube">Watch Video</a>
+  </div>
+</div>
+
+<!-- ===== END COPY ===== -->
+
+</div>
+</div>
+
+<footer>
+  <p>📍 Dream Seekers Library</p>
+  <p>📞 Phone: 09-888446546</p>
+  <p>📧 Email: dreamseekerslibrary@gmail.com</p>
+  <p>© 2026 Dream Seekers Library</p>
+</footer>
+
+<script>
+function searchBooks(value) {
+  value = value.toLowerCase();
+  let books = document.querySelectorAll(".book");
+  books.forEach(book => {
+    book.style.display = book.innerText.toLowerCase().includes(value) ? "block" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
